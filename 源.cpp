@@ -102,6 +102,11 @@ int main()
 	//读入敏感词
 	cin >> dz;
 	ifstream f1(dz);
+	if (!f1)//读入异常
+	{
+		cout << "ERROR!" << endl;
+		return 0;
+	}
 	while (f1 >> str)
 	{
 		m[i].nam = str;
@@ -116,6 +121,11 @@ int main()
 	//读入文章
 	cin >> dz;
 	ifstream f2(dz);
+	if (!f2)//读入异常
+	{
+		cout << "ERROR!" << endl;
+		return 0;
+	}
 	while (getline(f2, str))
 	{
 		h[j].wor = str;
