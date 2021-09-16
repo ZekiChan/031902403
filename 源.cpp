@@ -2,51 +2,51 @@
 #include<fstream>
 #include<sstream>
 using namespace std;
-class mgc//Ãô¸Ğ´Ê
+class mgc//æ•æ„Ÿè¯
 {
 public:
-	string nam;//ÖĞÎÄ¡¢Ó¢ÎÄ
-	string szm;//ºº×ÖÊ××ÖÄ¸
-	string py;//ºº×ÖÆ´Òô
-	string tyz[100];//Í¬Òô×Ö£¨°üÀ¨·±Ìå×Ö£©
-	int num;//±êºÅ
-	int len_z, len_s, len_p;//ÖĞÎÄ(Ó¢ÎÄ£©³¤¶È£¬Ê××ÖÄ¸³¤¶È£¬Æ´Òô³¤¶È
-	int fla;//ÅĞ±ğºº×Ö1Ó¢ÎÄ0
+	string nam;//ä¸­æ–‡ã€è‹±æ–‡
+	string szm;//æ±‰å­—é¦–å­—æ¯
+	string py;//æ±‰å­—æ‹¼éŸ³
+	string tyz[100];//åŒéŸ³å­—ï¼ˆåŒ…æ‹¬ç¹ä½“å­—ï¼‰
+	int num;//æ ‡å·
+	int len_z, len_s, len_p;//ä¸­æ–‡(è‹±æ–‡ï¼‰é•¿åº¦ï¼Œé¦–å­—æ¯é•¿åº¦ï¼Œæ‹¼éŸ³é•¿åº¦
+	int fla;//åˆ¤åˆ«æ±‰å­—1è‹±æ–‡0
 }m[1000];
-int msum;//×ÜÊı
-class hang//ÎÄÕÂµÄÄ³Ò»ĞĞ
+int msum;//æ€»æ•°
+class hang//æ–‡ç« çš„æŸä¸€è¡Œ
 {
 public:
-	string wor;//ÄÚÈİ
-	int num;//±êºÅ
-	int len;//³¤¶È
+	string wor;//å†…å®¹
+	int num;//æ ‡å·
+	int len;//é•¿åº¦
 }h[1000];
-int hsum;//×ÜÊı
-class sc//Êä³ö
+int hsum;//æ€»æ•°
+class sc//è¾“å‡º
 {
 public:
-	int m_num;//Ãô¸Ğ´Ê±êºÅ
-	int h_num;//Ä³ĞĞ±êºÅ
-	int h, e;//¹ıÂË·¶Î§
+	int m_num;//æ•æ„Ÿè¯æ ‡å·
+	int h_num;//æŸè¡Œæ ‡å·
+	int h, e;//è¿‡æ»¤èŒƒå›´
 }a[10000];
-int snum;//Êä³öµÄ×ÜÊı
+int snum;//è¾“å‡ºçš„æ€»æ•°
 
-void transformpy(mgc& M)//Æ´Òô×ª»»º¯Êı£¨Î´ÊµÏÖ£©
+void transformpy(mgc& M)//æ‹¼éŸ³è½¬æ¢å‡½æ•°ï¼ˆæœªå®ç°ï¼‰
 {
 
 }
 
-void transformtyz(mgc& M)//Í¬Òô×Ö£¨·±Ìå×Ö£©×ª»»º¯Êı£¨Î´ÊµÏÖ£©
+void transformtyz(mgc& M)//åŒéŸ³å­—ï¼ˆç¹ä½“å­—ï¼‰è½¬æ¢å‡½æ•°ï¼ˆæœªå®ç°ï¼‰
 {
 	
 }
 
-void search(mgc& M, hang& H)//ÔÚÄ³Ò»ĞĞÖĞËÑË÷Ò»¸öÃô¸Ğ´Ê²¢½øĞĞ´æ´¢
+void search(mgc& M, hang& H)//åœ¨æŸä¸€è¡Œä¸­æœç´¢ä¸€ä¸ªæ•æ„Ÿè¯å¹¶è¿›è¡Œå­˜å‚¨
 {
 	int i = 0, j = 0, fst;
-	if (M.fla)//ºº×ÖËÑË÷
+	if (M.fla)//æ±‰å­—æœç´¢
 	{
-		for ( ; j < H.len; j++) //Õû×ÖËÑË÷
+		for ( ; j < H.len; j++) //æ•´å­—æœç´¢
 		if (H.wor[j] == M.nam[i] && H.wor[j + 1] == M.nam[i + 1] && H.wor[j + 2] == M.nam[i + 2])
 		{
 			if (i == 0) fst = j;
@@ -54,27 +54,27 @@ void search(mgc& M, hang& H)//ÔÚÄ³Ò»ĞĞÖĞËÑË÷Ò»¸öÃô¸Ğ´Ê²¢½øĞĞ´æ´¢
 			j += 2;
 			if (i == M.len_z)
 			{
+				i = 0;
 				a[snum].m_num = M.num;
 				a[snum].h_num = H.num;
 				a[snum].h = fst;
 				a[snum++].e = j;
-				i = 0;
 			}
 		}
-		for (i = 0; i < H.len; i++)//Ê××ÖÄ¸ËÑË÷
+		for (i = 0; i < H.len; i++)//é¦–å­—æ¯æœç´¢
 		{
 			
 		}
-		for (i = 0; i < H.len; i++)//È«Æ´ËÑË÷
+		for (i = 0; i < H.len; i++)//å…¨æ‹¼æœç´¢
 		{
 
 		}
-		for (i = 0; i < H.len; i++)//Í¬Òô×Ö£¨°üÀ¨·±Ìå×Ö£©ËÑË÷
+		for (i = 0; i < H.len; i++)//åŒéŸ³å­—ï¼ˆåŒ…æ‹¬ç¹ä½“å­—ï¼‰æœç´¢
 		{
 
 		}
 	}
-	else//Ó¢ÎÄËÑË÷
+	else//è‹±æ–‡æœç´¢
 	{
 		for (; j < H.len; j++)
 		if ((H.wor[j] == M.nam[i]) || (H.wor[j] - M.nam[i] == 32 && M.nam[i] <= 'Z') || (M.nam[i] - H.wor[j] == 32 && M.nam[i] >= 'a'))
@@ -82,11 +82,11 @@ void search(mgc& M, hang& H)//ÔÚÄ³Ò»ĞĞÖĞËÑË÷Ò»¸öÃô¸Ğ´Ê²¢½øĞĞ´æ´¢
 			if (!i) fst = j;
 			if (++i == M.len_z)
 			{
+				i = 0;
 				a[snum].m_num = M.num;
 				a[snum].h_num = H.num;
 				a[snum].h = fst;
 				a[snum++].e = j;
-				i = 0;
 			}
 		}
 	}
@@ -99,7 +99,7 @@ int main()
 	string dz,str;
 	snum = 0;
 
-	//¶ÁÈëÃô¸Ğ´Ê
+	//è¯»å…¥æ•æ„Ÿè¯
 	cin >> dz;
 	ifstream f1(dz);
 	while (f1 >> str)
@@ -113,7 +113,7 @@ int main()
 	msum = i;
 	f1.close();
 
-	//¶ÁÈëÎÄÕÂ
+	//è¯»å…¥æ–‡ç« 
 	cin >> dz;
 	ifstream f2(dz);
 	while (getline(f2, str))
@@ -125,20 +125,20 @@ int main()
 	hsum = j;
 	f2.close();
 
-	//È«Æ´Ê××ÖÄ¸×ª»»
+	//å…¨æ‹¼é¦–å­—æ¯è½¬æ¢
 	for (i = 0; i < msum; i++)
 		transformpy(m[i]);
 
-	//Í¬Òô×Ö·±Ìå×Ö×ª»»
+	//åŒéŸ³å­—ç¹ä½“å­—è½¬æ¢
 	for (i = 0; i < msum; i++)
 		transformtyz(m[i]);
 
-	//ËÑË÷²¢´æ´¢
-	for (j = 0; j < hsum; j++)
-		for (i = 0; i < msum; i++)
+	//æœç´¢å¹¶å­˜å‚¨
+	for (i = 0; i < msum; i++)
+		for (j = 0; j < hsum; j++)
 			search(m[i], h[j]);
 
-	//Êä³ö´ğ°¸
+	//è¾“å‡ºç»“æœ
 	cin >> dz;
 	ofstream f3(dz);
 	f3 << "Total: " << snum << endl;
