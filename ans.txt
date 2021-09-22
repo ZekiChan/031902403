@@ -1,4 +1,4 @@
-Total: 266
+Total: 260
 Line2: <邪教> 邪教
 Line8: <fuck> Fuck
 Line10: <邪教> 邪教
@@ -97,17 +97,11 @@ Line247: <fuck> f                 uck
 Line248: <fuck> f                 uck
 Line249: <邪教> 邪教
 Line252: <fuck> f                 uck
-Line253: <fuck> FaLG连话都不想跟f                 uck
-Line253: <fuck> f                 uck
 Line254: <fuck> f435678u4567c!*&^%$#k
 Line255: <fuck> f435678u4567c!*&^%$#k
-Line256: <fuck> FaLG还是没有回应，好似没有听到f435678u4567c!*&^%$#k
-Line257: <fuck> FaLG如此不配合，f435678u4567c!*&^%$#k
 Line262: <fuck> f435678u4567c!*&^%$#k
 Line262: <fuck> f435678u4567c!*&^%$#k
-Line263: <fuck> FaLG没有理睬f！@#￥%…………&**uck
 Line272: <fuck> f！@#￥%…………&**uck
-Line275: <fuck> FaLG旁边趴在桌上的邪教身上，f！@#￥%…………&**uck
 Line275: <邪教> 邪教
 Line276: <fuck> f！@#￥%…………&**uck
 Line278: <邪教> 邪教
